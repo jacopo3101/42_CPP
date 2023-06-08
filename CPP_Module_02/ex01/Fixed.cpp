@@ -1,10 +1,23 @@
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	fixedPoint = 0;
+}
+
+Fixed::Fixed(const int n)
+{
+	std::cout << "Int constructor called" << std::endl;
+	fixedPoint = n;
+}
+
+Fixed::Fixed(const float n)
+{
+	std::cout << "Float constructor called" << std::endl;
+	// fixedPoint = n;
+	fixedPoint = roundf(n * (1 << fractBits));
+
 }
 
 Fixed& Fixed::operator=(Fixed &other)

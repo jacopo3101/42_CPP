@@ -1,7 +1,9 @@
 #pragma once
 #ifndef FIXED_HPP
 #define FIXED_HPP
-
+#include <iostream>
+#include <cmath>
+#include <string>
 class Fixed
 {
 private:
@@ -10,6 +12,8 @@ private:
 public:
 
     Fixed(Fixed &fixed);
+    Fixed(const int n);
+    Fixed(const float n);
     Fixed();
     ~Fixed();
     int getRawBits(void) const;

@@ -24,7 +24,7 @@ void Harl::complain(std::string level)
 {
 	int i = 0;
 	Harl harl;
-	std::string levels[5] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*methodPointers[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	while (i < 4 && levels[i] != level)
 		i++;

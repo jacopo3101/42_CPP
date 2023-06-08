@@ -4,7 +4,7 @@ CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
 
 FILES	= main.cpp Fixed.cpp
 
-NAME	= ex00
+NAME	= ex01
 
 RM	= rm -f
 
