@@ -11,14 +11,18 @@ private:
     int fixedPoint;
 public:
 
-    Fixed(Fixed &fixed);
+    Fixed(const Fixed &fixed);
     Fixed(const int n);
     Fixed(const float n);
     Fixed();
     ~Fixed();
     int getRawBits(void) const;
     void setRawBits(int const raw);
-    Fixed& operator=(Fixed &other);
+    float toFloat( void ) const;
+    int toInt( void ) const;
+    Fixed& operator=(const Fixed &other);
 };
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
