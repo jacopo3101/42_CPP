@@ -1,8 +1,8 @@
 GCC		= c++
 
-CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
+CFLAGS	= -g -Wall -Wextra -Werror 
 
-FILES	= main.cpp Fixed.cpp Point.cpp
+FILES	= main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 NAME	= ex03
 
