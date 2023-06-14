@@ -2,9 +2,9 @@ GCC		= c++
 
 CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
 
-FILES	= main.cpp ClapTrap.cpp
+FILES	= main.cpp ClapTrap.cpp ScavTrap.cpp
 
-NAME	= ex00
+NAME	= ex01
 
 RM	= rm -f
 
