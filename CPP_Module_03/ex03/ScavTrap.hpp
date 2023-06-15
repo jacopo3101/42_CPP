@@ -2,8 +2,10 @@
 #ifndef SCAVTRAP_CPP
 #define SCAVTRAP_CPP
 #include "ClapTrap.hpp"
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
+protected:
+    ScavTrap();
 public:
     ScavTrap(std::string &name);
     ScavTrap(ScavTrap &scavtrap);

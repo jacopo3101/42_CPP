@@ -3,10 +3,10 @@
 #define DIAMONDTRAP_HPP
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-class DiamondTrap : virtual public ScavTrap, virtual public FragTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
-    ClapTrap::name;
+    std::string name;
 public:
     DiamondTrap(std::string &name);
     DiamondTrap(DiamondTrap &diamondtrap);
