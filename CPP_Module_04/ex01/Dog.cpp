@@ -7,6 +7,7 @@ Dog::Dog(){
 }
 
 Dog::~Dog(){
+    delete brain;
     std::cout << "Brain destructor called" << std::endl;
 }
 
