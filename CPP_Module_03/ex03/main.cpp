@@ -11,6 +11,10 @@ int main()
     // frag1.highFivesGuys();
     // scav1.guardGate();
     diamond1.attack(name1);
+    diamond1.beRepaired(5);
+    diamond1.guardGate();
+    diamond1.highFivesGuys();
+    diamond1.takeDamage(6);
     diamond1.whoAmI();
     // scav1.attack(name1);
     // clap1.attack(name2);
