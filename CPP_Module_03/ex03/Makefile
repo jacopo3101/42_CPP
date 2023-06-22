@@ -1,6 +1,6 @@
 GCC		= c++
 
-CFLAGS	= -g -Wall -Wextra -Werror -std=c++98 -Wshadow
+CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
 
 FILES	= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
