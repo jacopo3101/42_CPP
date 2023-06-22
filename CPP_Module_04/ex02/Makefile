@@ -4,7 +4,7 @@ CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
 
 FILES	= main.cpp Cat.cpp Animal.cpp Dog.cpp Brain.cpp
 
-NAME	= ex01
+NAME	= ex02
 
 RM	= rm -f
 

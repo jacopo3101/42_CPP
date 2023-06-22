@@ -1,6 +1,4 @@
 #pragma once
-#ifndef CAT_CPP
-#define CAT_CPP
 #include "Animal.hpp"
 
 class Cat : public Animal
@@ -11,4 +9,3 @@ public:
     void makeSound() const;
 
 };
-#endif

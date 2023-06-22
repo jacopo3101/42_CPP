@@ -2,9 +2,9 @@ GCC		= c++
 
 CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
 
-FILES	= main.cpp Cat.cpp Animal.cpp Dog.cpp Brain.cpp
+FILES	= main.cpp
 
-NAME	= ex01
+NAME	= ex03
 
 RM	= rm -f
 

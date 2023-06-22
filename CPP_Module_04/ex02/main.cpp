@@ -15,10 +15,10 @@ int main()
     for (i = 0; i < MAX_SIZE; i++)
         delete animalList[i];
 
-    const Animal* j = new Dog();
+    // const Animal* j = new Animal();
     const Animal* k = new Cat();
 
-    delete j;
+    // delete j;
     delete k;
 
     return 0;

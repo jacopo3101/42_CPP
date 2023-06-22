@@ -1,6 +1,4 @@
 #pragma once
-#ifndef TEST_HPP
-#define TEST_HPP
 #include <iostream>
 
 class WrongAnimal
@@ -21,4 +19,3 @@ public:
     ~WrongCat();
     void makeSound() const;
 };
-#endif

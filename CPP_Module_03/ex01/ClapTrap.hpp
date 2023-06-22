@@ -1,6 +1,4 @@
 #pragma once
-#ifndef CLAPTRAP_CPP
-#define CLAPTRAP_CPP
 #include <iostream>
 class ClapTrap
 {
@@ -19,4 +17,3 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };
-#endif

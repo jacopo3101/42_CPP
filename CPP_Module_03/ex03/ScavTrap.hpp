@@ -1,6 +1,4 @@
 #pragma once
-#ifndef SCAVTRAP_CPP
-#define SCAVTRAP_CPP
 #include "ClapTrap.hpp"
 class ScavTrap : virtual public ClapTrap
 {
@@ -14,4 +12,3 @@ public:
     void guardGate();
     void attack(std::string &target);
 };
-#endif
