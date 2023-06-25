@@ -1,8 +1,8 @@
 GCC		= c++
 
-CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
+CFLAGS	= -g -Wall -Wextra -Werror
 
-FILES	= main.cpp
+FILES	= Cure.cpp Ice.cpp AMateria.cpp Character.cpp MateriaSource.cpp main.cpp
 
 NAME	= ex03
 
