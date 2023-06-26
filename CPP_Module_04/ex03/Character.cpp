@@ -1,30 +1,30 @@
 #include "Character.hpp"
 
-Character::Character()
+Character::Character() : inventory()
 {
     name = "";
 }
 
-Character::Character(const Character &other)
+Character::Character(const Character &other) : inventory()
 {
     this->name = other.name;
     for (size_t i = 0; i < 4; i++)
         inventory[i] = other.inventory[i]->clone();
 }
 
+Character::Character(const std::string &name) : inventory()
+{
+    this->name = name;
+}
+
 Character &Character::operator=(const Character &other)
 {
     if (this != &other)
     {
-        this->name = name;
+        this->name = other.name;
         swapInventory(*this, other);
     }
     return *this;
-}
-
-Character::Character(const std::string &name)
-{
-    this->name = name;
 }
 
 std::string const &Character::getName() const

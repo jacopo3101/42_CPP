@@ -1,6 +1,6 @@
 GCC		= c++
 
-CFLAGS	= -g -Wall -Wextra -Werror
+CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
 
 FILES	= Cure.cpp Ice.cpp AMateria.cpp Character.cpp MateriaSource.cpp main.cpp
 
