@@ -20,6 +20,16 @@ int main()
     me->use(0, *bob);
     me->use(1, *bob);
 
+    AMateria *bob_tmp;
+    bob_tmp = src->createMateria("ice");
+    bob->equip(bob_tmp);
+    bob_tmp = src->createMateria("cure");
+    bob->equip(bob_tmp);
+
+    bob->unequip(1);
+    bob->use(0, *me);
+    bob->use(1, *me);
+
     delete bob;
     delete me;
     delete src;

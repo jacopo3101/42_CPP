@@ -46,14 +46,20 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-    if (idx >= 0 && idx <= 3 && inventory[idx])
+    if (inventory[idx] && idx >= 0 && idx <= 3 )
+    {
         delete inventory[idx];
+        inventory[idx] = 0;
+    }
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (idx >= 0 && idx <= 3 && inventory[idx])
-        inventory[idx]->use(target);
+    if (inventory[idx] != 0)
+    {
+        if (inventory[idx] && idx >= 0 && idx <= 3)
+            inventory[idx]->use(target);
+    }
 }
 
 AMateria *Character::getAmateria(int idx)

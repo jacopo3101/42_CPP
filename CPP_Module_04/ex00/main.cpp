@@ -27,5 +27,6 @@ int main()
     delete j;
     delete wrongAnimal;
     delete wrongCat;
+    
     return 0;
 }
