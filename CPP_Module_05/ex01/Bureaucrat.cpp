@@ -45,6 +45,20 @@ std::string Bureaucrat::getName() const
     return name;
 }
 
+void Bureaucrat::signForm(Form &form) const
+{
+    if (form.getSignFlag() == true)
+        std::cout << *this << std::endl << "Form: " << form;
+    else
+    {
+        std::cout << name << " couldn't sign "<< form.getName() <<" because ";
+        if (form.getExecuteGrade() < grade)
+            std::cout << "grade too low!" << std::endl;
+        else
+            std::cout << "form can't be signed!" << std::endl;
+    }
+}
+
 Bureaucrat::~Bureaucrat(){}
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
@@ -53,12 +67,12 @@ std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
     return out;
 }
 
-const char *GradeTooHighException::whatMsg()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return "Grade can't be higher than 1!";
+    return "Grade too high!";
 }
 
-const char *GradeTooLowException::whatMsg()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return "Grade can't lower than 150!";
+    return "Grade too low!";
 }
