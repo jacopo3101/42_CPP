@@ -1,10 +1,10 @@
 GCC		= c++
 
-CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
+CFLAGS	= -g -Wall -Wextra -Werror #-std=c++98
 
-FILES	= main.cpp Bureaucrat.cpp Form.cpp
+FILES	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
-NAME	= ex01
+NAME	= ex02
 
 RM	= rm -f
 
