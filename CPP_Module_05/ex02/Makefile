@@ -1,6 +1,6 @@
 GCC		= c++
 
-CFLAGS	= -g -Wall -Wextra -Werror #-std=c++98
+CFLAGS	= -g -Wall -Wextra -Werror -std=c++98
 
 FILES	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 

@@ -45,18 +45,35 @@ std::string Bureaucrat::getName() const
     return name;
 }
 
-void Bureaucrat::signForm(AForm &form) const
+void Bureaucrat::signForm(AForm &form)
 {
-    if (form.getSignFlag() == true)
+    // if (form.getSignFlag() == false)
+    // {
+    //     std::cout << name << " couldn't sign "<< form.getName() <<" because ";
+    //     if (form.getExecuteGrade() < grade)
+    //         std::cout << "grade too low!" << std::endl;
+    //     else
+    //         std::cout << "form can't be signed!" << std::endl;
+    // }
+    // else
+    // {
+    //     std::cout << *this << std::endl << "Form: " << form;
+    // }
+    if (form.getSignFlag() == false && form.getExecuteGrade() >= grade)
+    {
         std::cout << *this << std::endl << "Form: " << form;
+        form.beSigned(*this);
+    }
     else
     {
-        std::cout << name << " couldn't sign "<< form.getName() <<" because ";
-        if (form.getExecuteGrade() < grade)
-            std::cout << "grade too low!" << std::endl;
+        if (form.getExecuteGrade() >= grade)
+            std::cout << name << " couldn't sign "<< form.getName() <<" because already signed" << std::endl;
         else
-            std::cout << "form can't be signed!" << std::endl;
+            std::cout << name << " couldn't sign "<< form.getName() <<" because grade too low!" << std::endl;
+
     }
+
+
 }
 
 Bureaucrat::~Bureaucrat(){}

@@ -4,14 +4,17 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include<string>
 class Intern
 {
 private:
-    AForm *makePresidentialPardon(std::string name);
-    AForm *makeRobotomyRequest(std::string name);
-    AForm *makeShrubberyCreation(std::string name);
+    static AForm *makePresidentialPardon(std::string name);
+    static AForm *makeRobotomyRequest(std::string name);
+    static AForm *makeShrubberyCreation(std::string name);
 public:
     Intern();
     ~Intern();
     AForm *makeForm(std::string name, std::string target);
-};  
+};
+
+typedef AForm *(*MemberFunctionPtr)(std::string);

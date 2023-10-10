@@ -29,7 +29,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     if (!this->getSignFlag())
         throw AForm::FormNotSignedException();
     std::ofstream file;
-    file.open(target + "_shrubbery", std::ios::out);
+    file.open((target + "_shrubbery").c_str(), std::ios::out);
     file << "                                                      ░░                                    " << std::endl;
     file << "                                          ▒▒▓▓▓▓▒▒▒▒░░░░▒▒▓▓▒▒                              " << std::endl;
     file << "                                        ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▓▓                              " << std::endl;
