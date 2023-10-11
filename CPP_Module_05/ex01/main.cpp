@@ -5,29 +5,10 @@ int main()
     try
     {
         Bureaucrat bur(3, "mario");
+        Bureaucrat bur1(96, "ciro");
         Form form1("list A", 56, 89);
         bur.signForm(form1);
-        form1.beSigned(bur);
-        bur.signForm(form1);
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        bur.decrementGrade();
-        std::cout << bur <<std::endl;
-        bur.decrementGrade();
-        std::cout << bur <<std::endl;
-        bur.decrementGrade();
+        bur1.signForm(form1);
     }catch(Bureaucrat::GradeTooHighException &ex)
     {
         std::cout << ex.what() << std::endl;

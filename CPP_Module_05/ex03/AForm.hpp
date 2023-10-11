@@ -12,8 +12,8 @@ private:
     bool signFlag;
     const int signGrade;
     const int executeGrade;
-    AForm();
 public:
+    AForm();
     AForm(std::string name, int signGrade, int executeGrade);
     AForm(AForm &Aform);
     ~AForm();

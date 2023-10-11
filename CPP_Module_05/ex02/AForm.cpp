@@ -14,9 +14,11 @@ AForm::AForm(AForm &Aform) : name(Aform.name), signGrade(Aform.signGrade), execu
     this->signFlag = Aform.signFlag;
 }
 
-AForm::~AForm(){}
+AForm::~AForm()
+{}
 
-//AForm::AForm(){}
+AForm::AForm() : name("NaN"), signGrade(150), executeGrade(150)
+{}
 
 std::string AForm::getName() const
 {

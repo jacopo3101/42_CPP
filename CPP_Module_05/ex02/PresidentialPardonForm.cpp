@@ -10,6 +10,9 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &scForm) :
     this->target = scForm.getTarget();
 }
 
+PresidentialPardonForm::PresidentialPardonForm() : AForm("NaN", 150, 150), target("NaN")
+{}
+
 std::string PresidentialPardonForm::getTarget() const
 {
     return target;

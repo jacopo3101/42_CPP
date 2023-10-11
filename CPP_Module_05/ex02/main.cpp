@@ -6,43 +6,27 @@
 int main()
 {
 
+    std::string name = "name";
+    std::string target = "target";
+    AForm *pardon = new PresidentialPardonForm(target, name);
+    AForm *shrubbery = new ShrubberyCreationForm(target, name);
+    AForm *robotomy = new RobotomyRequestForm(target, name);
     try
     {
-        Bureaucrat bur(10, "Gino");
-        std::string name = "name";
-        std::string target = "target";
-        AForm *pardon = new PresidentialPardonForm(target, name);
-        AForm *shrubbery = new ShrubberyCreationForm(target, name);
-        AForm *robotomy = new RobotomyRequestForm(target, name);
-        robotomy->beSigned(bur);
-        bur.signForm(*robotomy);
-        robotomy->execute(bur);
-        pardon->beSigned(bur);
+        Bureaucrat bur(1, "Gino");
         bur.signForm(*pardon);
-        pardon->execute(bur);        
-        shrubbery->beSigned(bur);
+        bur.executeForm(*pardon);
         bur.signForm(*shrubbery);
-        shrubbery->execute(bur);
+        bur.executeForm(*shrubbery);
+        bur.signForm(*robotomy);
+        bur.executeForm(*robotomy);
     }
-    catch(AForm::GradeTooHighException &ex)
+    catch(std::exception &ex)
     {
         std::cout << ex.what() << std::endl;
     }
-    catch(AForm::GradeTooLowException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch(AForm::FormNotSignedException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooHighException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+    delete pardon;
+    delete shrubbery;
+    delete robotomy;
     return 0;
 }

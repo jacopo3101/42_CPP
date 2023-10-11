@@ -13,6 +13,7 @@ private:
     const int signGrade;
     const int executeGrade;
 public:
+    Form();
     Form(std::string name, int signGrade, int executeGrade);
     Form(Form &form);
     ~Form();

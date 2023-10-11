@@ -14,6 +14,9 @@ void Bureaucrat::incrementGrade()
     grade--;
 }
 
+Bureaucrat::Bureaucrat() : name("NaN")
+{}
+
 Bureaucrat::Bureaucrat(int grade, std::string name) : name(name)
 {
     if (grade > 150)
@@ -53,12 +56,12 @@ std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
     return out;
 }
 
-const char *GradeTooHighException::whatMsg()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return "Grade can't be higher than 1!";
+    return "Grade too high!";
 }
 
-const char *GradeTooLowException::whatMsg()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return "Grade can't lower than 150!";
+    return "Grade too low!";
 }

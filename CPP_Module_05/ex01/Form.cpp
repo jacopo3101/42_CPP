@@ -14,6 +14,9 @@ Form::Form(Form &form) : name(form.name), signGrade(form.signGrade), executeGrad
     this->signFlag = form.signFlag;
 }
 
+Form::Form() : name("NaN"), signGrade(150), executeGrade(150)
+{}
+
 Form::~Form(){}
 
 std::string Form::getName() const

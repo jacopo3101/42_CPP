@@ -14,6 +14,9 @@ void Bureaucrat::incrementGrade()
     grade--;
 }
 
+Bureaucrat::Bureaucrat() : name("NaN")
+{}
+
 Bureaucrat::Bureaucrat(int grade, std::string name) : name(name)
 {
     if (grade > 150)
@@ -45,17 +48,19 @@ std::string Bureaucrat::getName() const
     return name;
 }
 
-void Bureaucrat::signForm(Form &form) const
+void Bureaucrat::signForm(Form &form)
 {
-    if (form.getSignFlag() == true)
-        std::cout << *this << std::endl << "Form: " << form;
+    if (form.getSignFlag() == false && form.getExecuteGrade() >= grade)
+    {
+        form.beSigned(*this);
+        std::cout << *this << std::endl << "Form: " << form << std::endl;
+    }
     else
     {
-        std::cout << name << " couldn't sign "<< form.getName() <<" because ";
-        if (form.getExecuteGrade() < grade)
-            std::cout << "grade too low!" << std::endl;
+        if (form.getExecuteGrade() >= grade)
+            std::cout << name << " couldn't sign "<< form.getName() <<" because already signed" << std::endl;
         else
-            std::cout << "form can't be signed!" << std::endl;
+            std::cout << name << " couldn't sign "<< form.getName() <<" because grade too low!" << std::endl;
     }
 }
 

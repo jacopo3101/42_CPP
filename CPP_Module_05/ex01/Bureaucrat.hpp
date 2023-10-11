@@ -12,6 +12,7 @@ private:
     const std::string name;
     int grade;
 public:
+    Bureaucrat();
     Bureaucrat(int grade, std::string name);
     Bureaucrat(const Bureaucrat &Bureaucrat);
     ~Bureaucrat();
@@ -19,7 +20,7 @@ public:
     std::string getName() const;
     void incrementGrade();
     void decrementGrade();
-    void signForm(Form &form) const;
+    void signForm(Form &form);
     Bureaucrat& operator=(const Bureaucrat &other);
 
     //exception classes

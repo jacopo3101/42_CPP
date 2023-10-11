@@ -14,6 +14,9 @@ void Bureaucrat::incrementGrade()
     grade--;
 }
 
+Bureaucrat::Bureaucrat() : name("NaN"), grade(150)
+{}
+
 Bureaucrat::Bureaucrat(int grade, std::string name) : name(name)
 {
     if (grade > 150)
@@ -45,17 +48,35 @@ std::string Bureaucrat::getName() const
     return name;
 }
 
-void Bureaucrat::signForm(AForm &form) const
+void Bureaucrat::signForm(AForm &form)
 {
-    if (form.getSignFlag() == true)
-        std::cout << *this << std::endl << "Form: " << form;
+    if (form.getSignFlag() == false && form.getSignGrade() > grade)
+    {
+        form.beSigned(*this);
+        std::cout << name << " signed Form: " << form << std::endl;
+    }
     else
     {
-        std::cout << name << " couldn't sign "<< form.getName() <<" because ";
-        if (form.getExecuteGrade() < grade)
-            std::cout << "grade too low!" << std::endl;
+        if (form.getSignGrade() > grade)
+            std::cout << name << " couldn't sign "<< form.getName() <<" because already signed" << std::endl;
         else
-            std::cout << "form can't be signed!" << std::endl;
+            std::cout << name << " couldn't sign "<< form.getName() <<" because grade too low!" << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if (form.getSignFlag() && form.getExecuteGrade() > grade)
+    {
+        form.execute(*this);
+        std::cout << name << " executed " << form << std::endl;
+    }
+    else
+    {
+        if (form.getExecuteGrade() > grade)
+            std::cout << name << " couldn't execute "<< form.getName() <<" because it's not signed" << std::endl;
+        else
+            std::cout << name << " couldn't execute "<< form.getName() <<" because grade too low!" << std::endl;
     }
 }
 

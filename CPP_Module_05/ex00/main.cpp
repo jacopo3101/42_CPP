@@ -1,35 +1,49 @@
 #include "Bureaucrat.hpp"
 int main()
 {
+    Bureaucrat bur1(3, "mario");
+    Bureaucrat bur2(145, "ciro");
     try
     {
-        Bureaucrat bur(3, "mario");
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        std::cout << bur <<std::endl;
-        bur.incrementGrade();
-        bur.decrementGrade();
-        std::cout << bur <<std::endl;
-        bur.decrementGrade();
-        std::cout << bur <<std::endl;
-        bur.decrementGrade();
-    }catch(GradeTooHighException &ex)
+        std::cout << bur1 <<std::endl;
+        bur1.incrementGrade();
+        std::cout << bur1 <<std::endl;
+        bur1.incrementGrade();
+        std::cout << bur1 <<std::endl;
+        bur1.incrementGrade();
+        std::cout << bur1 <<std::endl;
+        bur1.incrementGrade();
+        std::cout << bur1 <<std::endl;
+        bur1.incrementGrade();
+        std::cout << bur1 <<std::endl;
+        bur1.incrementGrade();
+        std::cout << bur1 <<std::endl;
+        bur1.incrementGrade();
+    }catch(Bureaucrat::GradeTooHighException &ex)
     {
-        std::cout << ex.whatMsg() << std::endl;
+        std::cout << ex.what() << std::endl;
     }
-    catch(GradeTooLowException &e)
+
+    try
     {
-        std::cout << e.whatMsg() << std::endl;
+        std::cout << bur2 <<std::endl;
+        bur2.decrementGrade();
+        std::cout << bur2 <<std::endl;
+        bur2.decrementGrade();
+        std::cout << bur2 <<std::endl;
+        bur2.decrementGrade();
+        std::cout << bur2 <<std::endl;
+        bur2.decrementGrade();
+        std::cout << bur2 <<std::endl;
+        bur2.decrementGrade();
+        std::cout << bur2 <<std::endl;
+        bur2.decrementGrade();
+        std::cout << bur2 <<std::endl;
+        bur2.decrementGrade();
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }
