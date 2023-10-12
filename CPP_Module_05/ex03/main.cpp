@@ -12,7 +12,7 @@ int main()
     AForm* rForm;
     Bureaucrat *b;
     Bureaucrat *b1;
-    rrf = someRandomIntern.makeForm("shrubbery creation", "gino");
+    rrf = someRandomIntern.makeForm("shrubbery creation", "Shrubbery_form");
     rForm = someRandomIntern.makeForm("robotomy request", "Bender");
     try
     {   

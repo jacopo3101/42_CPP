@@ -27,10 +27,7 @@ AForm *Intern::makeForm(std::string target, std::string name)
     for(int i = 0; i < 3; i++)
     {
         if (target.compare(targetList[i]) == 0)
-        {
-            std::cout << target.compare(targetList[i]) << "\n";
             return functionArray[i](name);
-        }
     }
     return NULL;
 }
