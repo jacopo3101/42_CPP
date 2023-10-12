@@ -28,6 +28,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat &bur) : name(bur.getName())
     this->grade = bur.getGrade();
 }
 
+Bureaucrat::Bureaucrat() : name("NaN"), grade(150)
+{}
+
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this != &other)
@@ -47,17 +50,33 @@ std::string Bureaucrat::getName() const
 
 void Bureaucrat::signForm(AForm &form)
 {
-    if (form.getSignFlag() == false && form.getExecuteGrade() >= grade)
+    if (form.getSignFlag() == false && form.getSignGrade() > grade)
     {
         form.beSigned(*this);
-        std::cout << *this << std::endl << "Form: " << form << std::endl;
+        std::cout << name << " signed Form: " << form << std::endl;
     }
     else
     {
-        if (form.getExecuteGrade() >= grade)
+        if (form.getSignGrade() > grade)
             std::cout << name << " couldn't sign "<< form.getName() <<" because already signed" << std::endl;
         else
             std::cout << name << " couldn't sign "<< form.getName() <<" because grade too low!" << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if (form.getSignFlag() && form.getExecuteGrade() > grade)
+    {
+        form.execute(*this);
+        std::cout << name << " executed " << form << std::endl;
+    }
+    else
+    {
+        if (form.getExecuteGrade() > grade)
+            std::cout << name << " couldn't execute "<< form.getName() <<" because it's not signed" << std::endl;
+        else
+            std::cout << name << " couldn't execute "<< form.getName() <<" because grade too low!" << std::endl;
     }
 }
 

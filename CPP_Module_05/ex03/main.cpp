@@ -6,73 +6,48 @@
 int main()
 {
 
-    // try
-    // {
-    //     Bureaucrat bur(10, "Gino");
-    //     std::string name = "name";
-    //     std::string target = "target";
-    //     AForm *pardon = new PresidentialPardonForm(target, name);
-    //     AForm *shrubbery = new ShrubberyCreationForm(target, name);
-    //     AForm *robotomy = new RobotomyRequestForm(target, name);
-    //     robotomy->beSigned(bur);
-    //     bur.signForm(*robotomy);
-    //     robotomy->execute(bur);
-    //     pardon->beSigned(bur);
-    //     bur.signForm(*pardon);
-    //     pardon->execute(bur);        
-    //     shrubbery->beSigned(bur);
-    //     bur.signForm(*shrubbery);
-    //     shrubbery->execute(bur);
-    // }
-    // catch(AForm::GradeTooHighException &ex)
-    // {
-    //     std::cout << ex.what() << std::endl;
-    // }
-    // catch(AForm::GradeTooLowException &e)
-    // {
-    //     std::cout << e.what() << std::endl;
-    // }
-    // catch(AForm::FormNotSignedException &e)
-    // {
-    //     std::cout << e.what() << std::endl;
-    // }
-    // catch(Bureaucrat::GradeTooLowException &e)
-    // {
-    //     std::cout << e.what() << std::endl;
-    // }
-    // catch(Bureaucrat::GradeTooHighException &e)
-    // {
-    //     std::cout << e.what() << std::endl;
-    // }
-    // return 0;
+    
     Intern someRandomIntern;
-    Bureaucrat b(2, "ginpo");
     AForm* rrf;
-    rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+    AForm* rForm;
+    Bureaucrat *b;
+    Bureaucrat *b1;
+    rrf = someRandomIntern.makeForm("shrubbery creation", "gino");
+    rForm = someRandomIntern.makeForm("robotomy request", "Bender");
+    try
+    {   
+        b = new Bureaucrat(2, "ginpo");
+        b1 = new Bureaucrat(100, "gino");
+    }
+    catch(std::exception &ex)
+    {
+        std::cout << ex.what();
+    }
+
+    try
+    {   
+        Bureaucrat b(2, "ginpo");
+        Bureaucrat b1(100, "gino");
+        b1.signForm(*rrf);
+        b.signForm(*rrf);
+        b.executeForm(*rrf);
+    }
+    catch(std::exception &ex)
+    {
+        std::cout << ex.what();
+    }
     try
     {
-        b.signForm(*rrf);
-        rrf->execute(b);
+        b1->signForm(*rForm);
+        b1->executeForm(*rForm);
     }
-    catch(AForm::GradeTooHighException &ex)
+    catch(std::exception &ex)
     {
-        std::cout << ex.what() << std::endl;
+        std::cout << ex.what();
     }
-    catch(AForm::GradeTooLowException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch(AForm::FormNotSignedException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch(Bureaucrat::GradeTooHighException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    
+    delete b;
+    delete b1;
+    delete rrf;
+    delete rForm;
+    return 0;
 }

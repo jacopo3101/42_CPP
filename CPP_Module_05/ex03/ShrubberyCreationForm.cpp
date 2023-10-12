@@ -10,6 +10,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &scForm) : AF
     this->target = scForm.getTarget();
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("NaN", 150, 150), target("NaN")
+{}
+
 std::string ShrubberyCreationForm::getTarget() const
 {
     return target;

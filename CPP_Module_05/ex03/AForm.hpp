@@ -16,7 +16,7 @@ public:
     AForm();
     AForm(std::string name, int signGrade, int executeGrade);
     AForm(AForm &Aform);
-    ~AForm();
+    virtual ~AForm() = 0;
     std::string getName() const;
     bool getSignFlag() const;
     int getSignGrade() const;

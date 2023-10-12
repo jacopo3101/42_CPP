@@ -15,6 +15,9 @@ std::string PresidentialPardonForm::getTarget() const
     return target;
 }
 
+PresidentialPardonForm::PresidentialPardonForm() : AForm("NaN", 150, 150), target("NaN")
+{}
+
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &other)
 {
     if (this != &other)

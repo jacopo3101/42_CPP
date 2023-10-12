@@ -10,6 +10,9 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &scForm) : AForm(sc
     this->target = scForm.getTarget();
 }
 
+RobotomyRequestForm::RobotomyRequestForm() : AForm("NaN", 150, 150), target("NaN")
+{}
+
 std::string RobotomyRequestForm::getTarget() const
 {
     return target;
@@ -28,8 +31,12 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
         throw AForm::GradeTooLowException();
     if (!this->getSignFlag())
         throw AForm::FormNotSignedException();
+
     std::cout << "\"some drilling noises\"" << std::endl;
-    if (rand() % 2)
+    unsigned seed = time(0);// Get the system time.
+    srand(seed);// Seed the random number generator.
+
+    if (rand() % 2 < 1)
         std::cout << target << " has been robotomized!" << std::endl;
     else
         std::cout << "Robotomized failed!" << std::endl;
