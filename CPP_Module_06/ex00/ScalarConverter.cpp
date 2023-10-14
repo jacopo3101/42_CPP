@@ -3,17 +3,17 @@
 void ScalarConverter::convert(char *literal)
 {
     std::string strLiteral(literal);
-    Types types;
     std::cout << ScalarConverter::isDouble(strLiteral) << std::endl;
     if (ScalarConverter::isDouble(strLiteral))
-        types = Double;
-    if (ScalarConverter::isFloat(strLiteral))
-        types = Float;
-    if (ScalarConverter::isInt(strLiteral))
-        types = Int;
-    if (ScalarConverter::isChar(strLiteral))
-        types = Char;
-    
+        ScalarConverter::printDouble(strLiteral);
+    else if (ScalarConverter::isFloat(strLiteral))
+        ScalarConverter::printFloat(strLiteral);
+    else if (ScalarConverter::isInt(strLiteral))
+        ScalarConverter::printInt(strLiteral);
+    else if (ScalarConverter::isChar(strLiteral))
+        ScalarConverter::printChar(strLiteral);
+    else
+        ScalarConverter::printPseudoLiteral(strLiteral);
 }
 
 int ScalarConverter::isInt(std::string literal)
@@ -67,4 +67,14 @@ int ScalarConverter::isChar(std::string literal)
         return 1;
     else
         return 0;
+}
+
+void ScalarConverter::printInt(std::string literal)
+{
+    int n = std::atoi(literal.c_str());
+    std::cout << "char : ";
+    if ( std::isprint(n))
+        std::cout << static_cast<char>(n) << std::endl;
+    else
+        std::cout << "Non displayable" << std::endl;
 }
