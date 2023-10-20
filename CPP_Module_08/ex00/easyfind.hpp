@@ -2,9 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <algorithm>
 
 template<typename T>
-typename T::const_iterator easyFind(const T &container, int n)
+typename T::iterator easyFind(T &container, int n)
 {
-    return T.find(n);
+    return std::find(container.begin(), container.end(), n);
 }
