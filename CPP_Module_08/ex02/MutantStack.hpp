@@ -1,19 +1,30 @@
 #pragma once
 #include <iterator>
-#include <iostream>
-#include <list>
+#include <stack>
+#include <deque>
+#include <iterator>
 
-template<typename T>
-class MutantStack
+template<typename T, class container=std::deque<T> >
+class MutantStack : public std::stack<T>
 {
-private:
-    std::list<T> list;
 public:
-    MutantStack();
-    ~MutantStack();
-    bool empty() const;
-    void pop();
-    void push(const T &val)
-    unsigned int size() const;
-    T &top();
+    MutantStack(){}
+
+    MutantStack(const MutantStack &other)
+    {
+        *this = other;
+    }
+
+    ~MutantStack(){}
+
+    typedef typename container::iterator iterator;
+    iterator begin()
+    {
+        return this->c.begin();
+    }
+
+    iterator end()
+    {
+        return this->c.end();
+    }
 };
