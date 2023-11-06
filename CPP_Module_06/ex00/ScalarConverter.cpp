@@ -1,5 +1,7 @@
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter() {}
+
 void ScalarConverter::convert(char *literal)
 {
     std::string strLiteral(literal);

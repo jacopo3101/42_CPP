@@ -1,5 +1,4 @@
 #include <stdint.h>
-//#include <cassert>
 #include <iostream>
 
 struct Data

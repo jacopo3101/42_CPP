@@ -19,6 +19,7 @@ private:
     static int isChar(std::string literal);
     static int isFloat(std::string literal);
     static int isDouble(std::string literal);
+    ScalarConverter();
 public:
     static void convert(char *literal);
 };
