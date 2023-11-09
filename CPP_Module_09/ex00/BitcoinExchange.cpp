@@ -92,6 +92,7 @@ void getBtcValue(std::string str, std::map<std::string, float> map)
     {
         if ((*it).first > time)
         {
+            std::cout << "db date = " << (*it).first << " | date = " << time << std::endl;
             it--;
             // std::cout << f << " - " << (*it).second << std::endl;
             std::cout << time << " => " << val << " = " << f * (*it).second << std::endl;
