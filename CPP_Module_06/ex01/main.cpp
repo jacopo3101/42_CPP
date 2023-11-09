@@ -7,7 +7,7 @@ int main()
     ptr1->DataName = "DataName";
     uintptr_t n = Serializer::serialize(ptr1);
     Data *ptr2 = Serializer::deserialize(n);
-    std::cout << ptr2->DataName << " " << ptr2->array[5] << std::endl;
+    std::cout << ptr2->DataName << " " << ptr1->array[5] << std::endl;
     if (ptr1 == ptr2)
         std::cout << "ptr1 and ptr2 points to the same data struntures" << std::endl;
     else
