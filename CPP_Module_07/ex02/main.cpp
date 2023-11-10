@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Array.hpp"
 #include <cstdlib>
+#include <string>
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -50,5 +51,12 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+
+    Array<std::string> empty;
+    Array<std::string> strList(5);
+    for (size_t i = 0; i < strList.size(); i++)
+    {
+        strList[i] = std::string("ciao");
+    }
     return 0;
 }

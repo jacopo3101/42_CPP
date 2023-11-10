@@ -53,7 +53,7 @@ public:
         }
     };
 
-    int &operator[](int index)
+    T &operator[](int index)
     {
         if (index >= 0 && (unsigned int)index < length)
             return array[index];
