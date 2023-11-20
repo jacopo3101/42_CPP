@@ -14,6 +14,10 @@ private:
     int tokenToOperation(char *str);
     void tokenizeStart(char *token);
     int tokenize(char *token);
+    void singleOperation();
+    void doubleOperation();
+    int executeOperation(int a, int b, char _operator);
+
     RPN();
 public:
     void EvaluateExpression(std::string token); 
