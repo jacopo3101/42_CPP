@@ -24,20 +24,23 @@ void RPN::EvaluateExpression(std::string token)
         std::cerr << e.what() << '\n';
         return;
     }
-    try
-    {
-        while (expression.c_str() != NULL)
-        {
-            std::cout << "2" << expression << std::endl;
-            tokenize(const_cast<char *>(token.c_str()));
-        }
+    std::cout << "start  = " << valueStack.top();
+    valueStack.pop();
+    std::cout << "start  = " << valueStack.top() << std::endl;
+    // try
+    // {
+    //     while (expression.c_str() != NULL)
+    //     {
+    //         std::cout << "2" << expression << std::endl;
+    //         tokenize(const_cast<char *>(token.c_str()));
+    //     }
         
-    }
-    catch(const RPN::BadExpressionFormatException& e)
-    {
-        std::cerr << e.what() << '\n';
-        return;
-    }
+    // }
+    // catch(const RPN::BadExpressionFormatException& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    //     return;
+    // }
     //std::cout << valueStack.top();
     //valueStack.pop();
     //std::cout << " " << valueStack.top() << " " << operationStack.top() << std::endl;
