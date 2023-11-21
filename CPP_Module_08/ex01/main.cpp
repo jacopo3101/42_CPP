@@ -21,6 +21,7 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+    s.print();
     std::cout << s.longestSpan() << std::endl;
     std::cout << s.shortestSpan() << std::endl;
 

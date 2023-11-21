@@ -40,9 +40,7 @@ void Span::addNumber(int n)
 
 void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-    for (std::vector<int>::iterator i = begin; i != end; i++)
-        addNumber(*i);
-    
+    numVector.insert(numVector.end(), begin, end);
 }
 int Span::longestSpan()
 {

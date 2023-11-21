@@ -15,6 +15,13 @@ public:
         *this = other;
     }
 
+    MutantStack& operator=(const MutantStack &other)
+    {
+        if(other != *this)
+            this = other;
+        return  *this;
+    }
+
     ~MutantStack(){}
 
     typedef typename container::iterator iterator;
