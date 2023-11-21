@@ -89,6 +89,12 @@ void RPN::EvaluateExpression(std::string token)
         std::cerr << e.what() << '\n';
         return;
     }
+    if (expression.empty())
+    {
+	    std::cout << valueStack.top() << std::endl;
+        return;
+    }
+
     RPN::singleOperation();
     try
     {
@@ -116,6 +122,7 @@ void RPN::EvaluateExpression(std::string token)
 
 void RPN::tokenizeStart(char *token)
 {
+
     char *tmp;
     tmp = std::strtok(const_cast<char *>(expression.c_str()), token);
     valueStack.push(tokenToInt(tmp));
@@ -130,8 +137,12 @@ void RPN::tokenizeStart(char *token)
     operationStack.push(tokenToOperation(tmp));
     if(valueStack.top() == -1)
         throw RPN::BadExpressionFormatException();
-    expression = std::strtok(NULL, "\0");
-
+    // std::cout<< std::strtok(NULL, "\0") << "   dfdfd\n";
+    tmp = std::strtok(NULL, "\0");
+    if (tmp == NULL)
+        expression.clear();
+    else
+        expression = tmp;
 }
 
 int RPN::tokenize(char *token)

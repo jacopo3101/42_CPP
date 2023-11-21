@@ -97,20 +97,13 @@ std::vector<unsigned int> PmergeMe::vecMerge(std::vector<unsigned int> left, std
 
 void PmergeMe::sortList(std::list<unsigned int> list)
 {
-    std::cout << "before: ";
-    printList(list);
     std::cout << std::endl;
 
     std::clock_t start = std::clock();
     list = recursiveListMerge(list);
     double time_taken = GET_DURATION(start);
 
-    std::cout << "after: ";
-    printList(list);
-    std::cout << std::endl;
-
     std::cout << "Time to process a range of " << list.size() <<" elements with std::list : " << time_taken << " us" << std::endl;
-
 }
 
 std::list<unsigned int> PmergeMe::recursiveListMerge(std::list<unsigned int> list)
