@@ -29,11 +29,9 @@ void PmergeMe::printList(std::list<unsigned int> list)
 
 void PmergeMe::sortVector(std::vector<unsigned int> vec)
 {
-    // Call the function whose execution time needs to be measured
     std::cout << "before: ";
     printVector(vec);
     std::cout << std::endl;
-
 
     std::clock_t start = std::clock();
     vec = recursiveVectorMerge(vec);
@@ -43,10 +41,7 @@ void PmergeMe::sortVector(std::vector<unsigned int> vec)
     printVector(vec);
     std::cout << std::endl;
 
-    // Output the execution time in microseconds
     std::cout << "Time to process a range of " << vec.size() << " elements with std::vector : " << time_taken << " us" << std::endl;
-
-
 }
 
 std::vector<unsigned int> PmergeMe::recursiveVectorMerge(std::vector<unsigned int> vec)
@@ -89,9 +84,6 @@ std::vector<unsigned int> PmergeMe::vecMerge(std::vector<unsigned int> left, std
         result.push_back(right.front());
         right.erase(right.begin());
     }
-    //std::cout << "result = ";
-    //printVector(result);
-    //std::cout << std::endl;
     return result;
 }
 
@@ -150,8 +142,5 @@ std::list<unsigned int> PmergeMe::listMerge(std::list<unsigned int> left, std::l
         result.push_back(right.front());
         right.erase(right.begin());
     }
-    //std::cout << "result = ";
-    //printlist(result);
-    //std::cout << std::endl;
     return result;
 }

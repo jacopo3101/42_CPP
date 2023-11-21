@@ -89,13 +89,13 @@ void RPN::EvaluateExpression(std::string token)
         std::cerr << e.what() << '\n';
         return;
     }
+
+    RPN::singleOperation();
     if (expression.empty())
     {
 	    std::cout << valueStack.top() << std::endl;
         return;
     }
-
-    RPN::singleOperation();
     try
     {
         while (!expression.empty())
