@@ -69,11 +69,11 @@ void RPN::doubleOperation()
 	}
 	else
 	{
-		valueStack.push(RPN::executeOperation(valueStack.top(), valTmp2, operationStack.top()));
+        valueStack.push(RPN::executeOperation(valueStack.top(), valTmp2, operation1));
 		operationStack.pop();
 		valTmp2 = valueStack.top();
 		valueStack.pop();
-		valueStack.push(RPN::executeOperation(valTmp1, valTmp2, operationStack.top()));
+		valueStack.push(RPN::executeOperation(valTmp1, valTmp2, operation2));
 	}
 }
 
@@ -89,7 +89,6 @@ void RPN::EvaluateExpression(std::string token)
         std::cerr << e.what() << '\n';
         return;
     }
-
     RPN::singleOperation();
     if (expression.empty())
     {
@@ -100,17 +99,12 @@ void RPN::EvaluateExpression(std::string token)
     {
         while (!expression.empty())
         {
-
             status = tokenize(const_cast<char *>(token.c_str()));
-
-			
 			if (status == 1)
 			    RPN::singleOperation();
 			else
 				RPN::doubleOperation();
-			
         }
-        
     }
     catch(const RPN::BadExpressionFormatException& e)
     {
@@ -137,7 +131,6 @@ void RPN::tokenizeStart(char *token)
     operationStack.push(tokenToOperation(tmp));
     if(valueStack.top() == -1)
         throw RPN::BadExpressionFormatException();
-    // std::cout<< std::strtok(NULL, "\0") << "   dfdfd\n";
     tmp = std::strtok(NULL, "\0");
     if (tmp == NULL)
         expression.clear();
