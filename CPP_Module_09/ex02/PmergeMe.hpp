@@ -8,7 +8,6 @@
 # define MICROSECOND 100000
 
 # define GET_DURATION(start) static_cast<double>(std::clock() - start) / static_cast<double>(CLOCKS_PER_SEC) * MICROSECOND
-
 class PmergeMe
 {
 public:

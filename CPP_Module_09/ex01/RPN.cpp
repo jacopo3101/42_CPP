@@ -58,7 +58,7 @@ void RPN::doubleOperation()
 	operationStack.pop();
 	operation2 = operationStack.top();
 	operationStack.pop();
-	if (operation2 == '*' || operation2 == '/')
+	if (operation1 == '*' || operation1 == '/' || operation2 == '*' || operation2 == '/')
 	{
 		valueStack.push(RPN::executeOperation(valTmp2, valTmp1, operation2));
 		valTmp1 = valueStack.top();
@@ -70,10 +70,9 @@ void RPN::doubleOperation()
 	else
 	{
         valueStack.push(RPN::executeOperation(valueStack.top(), valTmp2, operation1));
-		operationStack.pop();
-		valTmp2 = valueStack.top();
-		valueStack.pop();
-		valueStack.push(RPN::executeOperation(valTmp1, valTmp2, operation2));
+        valTmp2 = valueStack.top();
+        valueStack.pop();
+        valueStack.push(RPN::executeOperation(valTmp1, valTmp2, operation2));
 	}
 }
 
