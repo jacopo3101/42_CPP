@@ -1,1 +1,2 @@
 # 42_CPP
+CPP Module 00-09, 10 projects aimed at learning the C++ language and object-oriented development techniques: classes, namespaces, constructors and destructors, memory management in C++, inheritance, abstraction, overloading, templates, types, tools of the C++ standard library, C++ containers.
